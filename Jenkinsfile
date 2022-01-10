@@ -2,7 +2,7 @@ node{
     def MAVEN_HOME = tool "testmaven"
     env.PATH = "${env.PATH}:${MAVEN_HOME}/bin"
     stage('checkout'){
-        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tanvi23d/profile-service.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/development']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tanvi23d/profile-service.git']]])
 }
     stage('compile'){
         sh 'mvn clean compile'
